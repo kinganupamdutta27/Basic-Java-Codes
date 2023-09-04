@@ -24,15 +24,14 @@ public class MargeShort {
         }
     }
     public static void MargeShortDevide(int[] array, int Start, int End){
-        if(Start>=End){
-            return;
+        if(Start<End) {
+
+
+            int Middle = Start + (End - Start) / 2;
+            MargeShortDevide(array, Start, Middle);
+            MargeShortDevide(array, Middle + 1, End);
+            MargeShortConquer(array, Start, Middle, End);
         }
-
-        int Middle = Start + (End-Start)/2;
-        MargeShortDevide(array,Start,Middle);
-        MargeShortDevide(array, Middle+1, End);
-        MargeShortConquer(array, Start, Middle, End);
-
     }
 
     public static void main(String[] args) {
